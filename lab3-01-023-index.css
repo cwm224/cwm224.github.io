@@ -148,15 +148,23 @@ a {
     top: 0;
     left: 0;
 }
-.img2{
+table{
     position: absolute;
-    bottom: 0;
-    left: 0;
+    top: 350px;
+    left:50px;
+    width: 700px;
+    height: 300px;
+    text-align: center;
+    border: 1px solid #cccccc;
+    border-collapse: collapse;
 }
-.img3{
-    position: absolute;
-    bottom: 0;
-    right: 0;
+td,th{
+    border:1px solid #cccccc;
+}
+th{
+    height:40px;
+    background-color: #0099cc;
+    color: #fff;
 }
 .right{
     position: fixed;
