@@ -1,0 +1,292 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #666;
+    font-size: 14px;
+}
+
+/* 登录大盒子 */
+#login {
+    display: none;
+    border: 1px solid #aaa;
+    width: 400px;
+    height: 500px;
+    margin: 0 auto; 
+    padding: 30px;
+}
+
+#cnte {
+    width: 100%;
+}
+
+/* 顶部登录选项 */
+.pass {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+.pass li {
+    padding: 0 20px;
+    cursor: pointer;
+}
+.pass li:first-child {
+    color: #a5816c;
+    font-weight: bold;
+}
+
+.main input {
+    width: 100%;
+    height: 45px;
+    margin: 10px 0;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+}
+.main input:focus {
+    border-color: #926246;
+}
+
+.agree {
+    text-align: center;
+    margin: 15px 0;
+    font-size: 14px;
+    color: #666;
+}
+.agree a {
+    color: #5d493d;
+}
+
+/* 登录按钮 */
+.but input {
+    display: block;
+    width: 100%;
+    height: 48px;
+    font-size: 18px;
+    background: #2d2c2b;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition:all 0.3s ease;
+}
+.but input:hover {
+    background: #393634;
+    transform: scale(1.03);
+}
+
+.register {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+
+
+.top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 75%;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid rgb(233, 233, 233);
+    text-align: center;
+}
+.top ul>li{
+    float: left;
+    width: 24%;
+}
+.inp {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 25%;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid rgb(233, 233, 233);
+    text-align: center;
+}
+.inp ul>li{
+    float: right;
+    width:20%；
+}
+.inp .img46:hover {
+    transform:rotate(100deg);
+}
+#box {
+    margin: 60px auto 0;
+    width: 1198px;
+    overflow: hidden;
+    border: 1px solid rgb(233, 233, 233);
+}
+.left,.banner,.right{
+    float: left;
+}
+#box .left{
+    position: relative;
+    width: 200px;
+    height: 700px;
+    background-color: azure;
+}
+.left ul>li{
+    list-style: none;
+}
+.left a{
+    display: inline-block;
+    width: 180px;
+    height: 40px;
+    color: black;
+    padding-left: 20px;
+    text-decoration: none;
+}
+.left a:hover {
+    background-color: aliceblue;
+    cursor: pointer;
+}
+.ban1 a:hover {
+    background-color: rgb(8, 130, 237);
+    cursor: pointer;
+}
+.banner{
+    position: relative;
+    width: 800px;
+    height: 700px;
+}
+
+/* 轮播图
+.ban1 {
+    width: 800px;
+    height: 350px;
+    overflow: hidden;
+    position: relative;
+    z-index:1;
+}
+.img1 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 800px;
+    height: 700px; 
+    animation: imgg 8s linear infinite alternate;
+}
+@keyframes imgg {
+    0% {
+        transform: translateY(0);
+    }
+    22% {
+        transform: translateY(0);
+    }
+    44% {
+        transform: translateY(-350px);
+    }
+    66% {
+        transform: translateY(-350px);
+    }
+    88% {
+        transform: translateY(-700px);
+    }
+    100% {
+        transform: translateY(-700px);
+    }
+}*/
+/* 轮播图容器 - 优化版 */
+.ban1 {
+    width: 800px;
+    height: 350px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.banner-slide {
+    width: 100%;
+    /* 3张图高度总和 */
+    height: 1050px;
+    display: flex;
+    flex-direction: column;
+    animation: bannerPlay 9s infinite ease-in-out;
+}
+
+.banner-slide img {
+    width: 800px;
+    height: 350px;
+    object-fit: cover;
+    user-select: none;
+    display: block;
+}
+
+/* 垂直轮播关键帧 完美版 */
+@keyframes bannerPlay {
+     0%    { transform: translateY(0); }
+    20%   { transform: translateY(0); }
+    30%   { transform: translateY(-350px); }  /* 滑动占 10% */
+    50%   { transform: translateY(-350px); }
+    60%   { transform: translateY(-700px); }
+    80%   { transform: translateY(-700px); }
+    90%   { transform: translateY(0); }
+    100%  { transform: translateY(0); }
+}
+
+
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.6);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* 当前激活的圆点 */
+.dot.active {
+    background: #fff;
+    width: 20px;
+    border-radius: 5px;
+}
+
+/*图片动画效果*/
+.img7 {
+    transition: all 0.3s ease;
+}
+.img7:hover {
+    transform: translateX(10px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+table{
+    position: absolute;
+    top: 350px;
+    left:50px;
+    width: 700px;
+    height: 300px;
+    text-align: center;
+    border: 1px solid #cccccc;
+    border-collapse: collapse;
+    z-index: 2;
+}
+td,th{
+    border:1px solid #cccccc;
+}
+th{
+    height:40px;
+    background-color: #0099cc;
+    color: #fff;
+}
+.right{
+    position: fixed;
+    width: 198px;
+    height: 700px;
+    margin-left: 1000px;
+}
+.inp{
+    float: right;
+}
