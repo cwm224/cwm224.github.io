@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>用户登录</title>
+        <link type="text/css" rel="stylesheet" href="css/lab4-01-023-index.css">
+    </head>
+    <body>
+        <div id="login">
+            <div id="cnte">
+                <div class="header">
+                    <ul class="pass">
+                        <li>密码登录</li>
+                        <li>验证码登录</li>
+                    </ul>
+                </div>
+                <div class="main">
+                        <ul>
+                            <li><input type="text" id="user" placeholder="手机号/昵称/邮箱"></li>
+                            <li><input type="password" id="pass" placeholder="密码"></li>
+                        </ul>
+               
+                    <p class="agree">登录及同意<a href="javascript:">用户协议，隐私协议</a></p>
+                    <div class="but">
+                        <input type="button" value="登录" onclick="login()">
+                    </div>
+                        <ul class="register">
+                            <li><a href="javascript:reg()">立即注册</a></li>
+                            <li><a href="javascript:">忘记密码</a></li>
+                        </ul>
+                </div>
+                <div class="footer">
+                    <ul>
+                        <li><img src=""></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+    <div id="cl2">   
+     <div class="top">
+        <div class="inp">
+            <ul>
+                <li>><input type="button" value="登录" onclick="hide()"></li>
+                <li>><img class="img46" src="img/img4.jpg" width="40" height="40" alt="购物车"></li>
+                <li><img class="img46" src="img/img6.webp" width="30" height="30" alt="搜索"></li>
+            </ul>
+        </div>
+            <ul>
+                <li><a href="javascript:;">首页</a></li>
+                <li><a href="javascript:;">图书分类</a></li>
+                <li><a href="javascript:;">活动专区</a></li>
+                <li><a href="javascript:;">个人中心</a></li>
+                
+            </ul>
+            
+    </div>
+    
+    <div id="box">
+        
+        <div class="left">
+            <ul>
+                <li><a href="javascript:;">童话书</a></li>
+                <li><a href="javascript:;">网络文学</a></li>
+                <li><a href="javascript:;">创意文具</a></li>
+                <li><a href="javascript:;">电脑办公</a></li>
+                <li><a href="javascript:;">母婴玩具</a></li>
+                <li><a href="javascript:;">食品</a></li>
+                <li><a href="javascript:;">个人护理</a></li>
+                <li><a href="javascript:;">家用电器</a></li>
+                <li><a href="javascript:;">生活服务</a></li>
+            </ul>
+        </div>
+        <div class="banner">
+            <div class="ban1">
+                <div class="banner-slide">
+        <img src="img/img1.png" alt="轮播图1">
+        <img src="img/img2.png" alt="轮播图2">
+        <img src="img/img3.png" alt="轮播图3">
+    </div>
+            </div>
+            <div class="tab">
+                <table>
+                    <caption>新书上市</caption>
+                    <thead>
+                    <tr>
+                        <td>新书</td>
+                        <td>价格</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>我是猫</td>
+                            <td>59￥</td>
+                        </tr>
+                        <tr>
+                            <td>解忧杂货铺</td>
+                            <td>49￥</td>
+                        </tr>
+                        <tr>
+                            <td>从月亮来的男孩</td>
+                            <td>49￥</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="right">
+            <img src="img/img5.jpg" width="250" height="70" alt>
+            <img class="img7" src="img/img7.png" width="250" height="315" alt>
+            <img class="img7" src="img/img8.png" width="250" height="315" alt>
+        </div>
+    </div>
+    </div>
+
+    <script>
+        function reg(){
+            let u = user.value;
+            let p = pass.value;
+            if(!u||!p) return alert("不能为空");
+            localStorage.setItem("name",u);
+            localStorage.setItem("pass",p);
+            alert("注册成功");
+        }
+
+                function login(){
+                    let u = user.value;
+                    let p = pass.value;
+                    let saveUser = localStorage.getItem("name");
+                    let savePwd = localStorage.getItem("pass");
+                    if(u===saveUser && p===savePwd){
+                        alert("登录成功");
+                    }else{
+                        alert("账号或密码错误");
+                    }
+                }
+        function hide(){
+            document.getElementById("cl2").style.display = "none";
+            document.getElementById("login").style.display = "block";
+        }
+    </script>
+    </body>
+</html>
