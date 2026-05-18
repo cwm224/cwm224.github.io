@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* 👈 新增：统一盒模型，防止布局错乱 */
+    box-sizing: border-box; /* 统一盒模型，防止布局错乱 */
 }
 li {
     list-style: none;
@@ -10,7 +10,7 @@ a {
     text-decoration: none;
     color: #666;
     font-size: 14px;
-    /* 👇 新增：导航3D平滑过渡 */
+    /* 导航3D平滑过渡 */
     transition: all 0.3s ease;
 }
 
@@ -38,7 +38,7 @@ a {
 .pass li {
     padding: 0 20px;
     cursor: pointer;
-    transition: all 0.3s ease; /* 👈 新增：选项平滑过渡 */
+    transition: all 0.3s ease; /* 选项平滑过渡 */
 }
 .pass li:first-child {
     color: #a5816c;
@@ -53,11 +53,11 @@ a {
     border: 1px solid #ccc;
     border-radius: 4px;
     outline: none;
-    transition: all 0.3s ease; /* 👈 新增：输入框焦点平滑过渡 */
+    transition: all 0.3s ease; /* 输入框焦点平滑过渡 */
 }
 .main input:focus {
     border-color: #926246;
-    transform: scale(1.02); /* 👈 新增：聚焦轻微放大 */
+    transform: scale(1.02); /* 聚焦轻微放大 */
 }
 
 .agree {
@@ -94,9 +94,7 @@ a {
     margin-top: 20px;
 }
 
-/* ========================
-   👇 新增：3D页脚（社交图标+版权）
-========================= */
+/* 3D页脚（社交图标+版权） */
 .footer {
     margin-top: 40px;
     text-align: center;
@@ -110,10 +108,10 @@ a {
 .social-3d li {
     width: 30px;
     height: 30px;
-    transition: transform 0.5s ease; /* 👈 3D旋转过渡 */
+    transition: transform 0.5s ease; 
 }
 .social-3d li:hover {
-    transform: rotateY(360deg) scale(1.2); /* 👈 3D旋转+放大 */
+    transform: rotateY(360deg) scale(1.2); 
 }
 .social-3d img {
     width: 100%;
@@ -124,7 +122,7 @@ a {
     font-size: 12px;
     color: #999;
     opacity: 0;
-    animation: fadeIn 1.5s forwards; /* 👈 淡入动画 */
+    animation: fadeIn 1.5s forwards; /* 淡入动画 */
 }
 @keyframes fadeIn {
     to { opacity: 1; }
@@ -147,7 +145,7 @@ a {
 .top a:hover {
     color: #926246;
     font-weight: bold;
-    transform: translateY(-2px); /* 👈 新增：导航悬浮3D上移 */
+    transform: translateY(-2px); /*新增：导航悬浮3D上移 */
 }
 .inp {
     position: fixed;
@@ -164,7 +162,7 @@ a {
     width:20%;
 }
 .inp .img46:hover {
-    transform:rotate(360deg); /* 👈 优化：完整3D旋转 */
+    transform:rotate(360deg); /* 完整3D旋转 */
     transition: 0.5s ease;
 }
 #box {
@@ -178,7 +176,7 @@ a {
 }
 #box .left{
     position: relative;
-    width: 200px;
+    width: 170px;
     height: 700px;
     background-color: azure;
 }
@@ -192,12 +190,12 @@ a {
     color: black;
     padding-left: 20px;
     text-decoration: none;
-    transition: all 0.3s ease; /* 👈 新增：左侧菜单平滑过渡 */
+    transition: all 0.3s ease;
 }
 .left a:hover {
     background-color: aliceblue;
     cursor: pointer;
-    padding-left: 25px; /* 👈 新增：3D缩进效果 */
+    padding-left: 25px; 
 }
 .ban1 a:hover {
     background-color: rgb(8, 130, 237);
@@ -290,14 +288,13 @@ th{
     color: #fff;
 }
 .right{
-    width: 198px;
+    float: left;
+    width: 150px;
     height: 700px;
     padding: 0 10px;
 }
 
-/* ========================
-   👇 新增核心：3D翻转图书卡片
-========================= */
+/* 3D翻转图书卡片 */
 .book-card-3d {
     width: 250px;
     height: 315px;
@@ -308,7 +305,7 @@ th{
     cursor: pointer;
 }
 .book-card-3d:hover {
-    transform: rotateY(180deg); /* 👈 鼠标悬停3D翻转 */
+    transform: rotateY(180deg); /* 鼠标悬停3D翻转 */
 }
 .card-front, .card-back {
     width: 100%;
@@ -350,9 +347,7 @@ th{
     line-height: 1.5;
 }
 
-/* ========================
-   👇 新增：3D环形热门图书展示
-========================= */
+/* 新增：3D环形热门图书展示 */
 .circle-3d-box {
     width: 100%;
     text-align: center;
@@ -368,7 +363,7 @@ th{
     margin: 0 auto;
     position: relative;
     transform-style: preserve-3d;
-    animation: circleRotate 15s linear infinite; /* 👈 自动缓慢旋转 */
+    animation: circleRotate 15s linear infinite; /*  自动缓慢旋转 */
 }
 .circle-3d:hover {
     animation-play-state: paused; /* 鼠标悬浮暂停 */
