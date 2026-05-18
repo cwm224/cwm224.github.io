@@ -1,0 +1,430 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* 👈 新增：统一盒模型，防止布局错乱 */
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #666;
+    font-size: 14px;
+    /* 👇 新增：导航3D平滑过渡 */
+    transition: all 0.3s ease;
+}
+
+/* 登录大盒子 */
+#login {
+    display: none;
+    border: 1px solid #aaa;
+    width: 400px;
+    height: 500px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+#cnte {
+    width: 100%;
+}
+
+/* 顶部登录选项 */
+.pass {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+.pass li {
+    padding: 0 20px;
+    cursor: pointer;
+    transition: all 0.3s ease; /* 👈 新增：选项平滑过渡 */
+}
+.pass li:first-child {
+    color: #a5816c;
+    font-weight: bold;
+}
+
+.main input {
+    width: 100%;
+    height: 45px;
+    margin: 10px 0;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    transition: all 0.3s ease; /* 👈 新增：输入框焦点平滑过渡 */
+}
+.main input:focus {
+    border-color: #926246;
+    transform: scale(1.02); /* 👈 新增：聚焦轻微放大 */
+}
+
+.agree {
+    text-align: center;
+    margin: 15px 0;
+    font-size: 14px;
+    color: #666;
+}
+.agree a {
+    color: #5d493d;
+}
+
+/* 登录按钮 */
+.but input {
+    display: block;
+    width: 100%;
+    height: 48px;
+    font-size: 18px;
+    background: #2d2c2b;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition:all 0.3s ease;
+}
+.but input:hover {
+    background: #393634;
+    transform: scale(1.03);
+}
+
+.register {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* ========================
+   👇 新增：3D页脚（社交图标+版权）
+========================= */
+.footer {
+    margin-top: 40px;
+    text-align: center;
+}
+.social-3d {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+.social-3d li {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.5s ease; /* 👈 3D旋转过渡 */
+}
+.social-3d li:hover {
+    transform: rotateY(360deg) scale(1.2); /* 👈 3D旋转+放大 */
+}
+.social-3d img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.copyright {
+    font-size: 12px;
+    color: #999;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards; /* 👈 淡入动画 */
+}
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+.top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 75%;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid rgb(233, 233, 233);
+    text-align: center;
+}
+.top ul>li{
+    float: left;
+    width: 24%;
+}
+.top a:hover {
+    color: #926246;
+    font-weight: bold;
+    transform: translateY(-2px); /* 👈 新增：导航悬浮3D上移 */
+}
+.inp {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 25%;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid rgb(233, 233, 233);
+    text-align: center;
+}
+.inp ul>li{
+    float: right;
+    width:20%;
+}
+.inp .img46:hover {
+    transform:rotate(360deg); /* 👈 优化：完整3D旋转 */
+    transition: 0.5s ease;
+}
+#box {
+    margin: 60px auto 0;
+    width: 1198px;
+    overflow: hidden;
+    border: 1px solid rgb(233, 233, 233);
+}
+.left,.banner,.right{
+    float: left;
+}
+#box .left{
+    position: relative;
+    width: 200px;
+    height: 700px;
+    background-color: azure;
+}
+.left ul>li{
+    list-style: none;
+}
+.left a{
+    display: inline-block;
+    width: 180px;
+    height: 40px;
+    color: black;
+    padding-left: 20px;
+    text-decoration: none;
+    transition: all 0.3s ease; /* 👈 新增：左侧菜单平滑过渡 */
+}
+.left a:hover {
+    background-color: aliceblue;
+    cursor: pointer;
+    padding-left: 25px; /* 👈 新增：3D缩进效果 */
+}
+.ban1 a:hover {
+    background-color: rgb(8, 130, 237);
+    cursor: pointer;
+}
+.banner{
+    position: relative;
+    width: 800px;
+    height: 700px;
+}
+
+.ban1 {
+    width: 800px;
+    height: 350px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.banner-slide {
+    width: 100%;
+    height: 1050px;
+    display: flex;
+    flex-direction: column;
+    animation: bannerPlay 9s infinite ease-in-out;
+}
+
+.banner-slide img {
+    width: 800px;
+    height: 350px;
+    object-fit: cover;
+    user-select: none;
+    display: block;
+}
+
+/*轮播图 */
+@keyframes bannerPlay {
+    0%    { transform: translateY(0); }
+    20%   { transform: translateY(0); }
+    30%   { transform: translateY(-350px); }
+    50%   { transform: translateY(-350px); }
+    60%   { transform: translateY(-700px); }
+    80%   { transform: translateY(-700px); }
+    90%   { transform: translateY(0); }
+    100%  { transform: translateY(0); }
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.6);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* 当前激活的圆点 */
+.dot.active {
+    background: #fff;
+    width: 20px;
+    border-radius: 5px;
+}
+
+/*图片动画效果*/
+.img7 {
+    transition: all 0.3s ease;
+}
+.img7:hover {
+    transform: translateX(10px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+table{
+    position: absolute;
+    top: 350px;
+    left:50px;
+    width: 700px;
+    height: 300px;
+    text-align: center;
+    border: 1px solid #cccccc;
+    border-collapse: collapse;
+    z-index: 2;
+}
+td,th{
+    border:1px solid #cccccc;
+}
+th{
+    height:40px;
+    background-color: #0099cc;
+    color: #fff;
+}
+.right{
+    width: 198px;
+    height: 700px;
+    padding: 0 10px;
+}
+
+/* ========================
+   👇 新增核心：3D翻转图书卡片
+========================= */
+.book-card-3d {
+    width: 250px;
+    height: 315px;
+    margin: 10px 0;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease;
+    cursor: pointer;
+}
+.book-card-3d:hover {
+    transform: rotateY(180deg); /* 👈 鼠标悬停3D翻转 */
+}
+.card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden; /* 背面不可见 */
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.card-back {
+    background: #f8f5f2;
+    padding: 20px;
+    transform: rotateY(180deg); /* 背面默认翻转 */
+    text-align: center;
+}
+.card-back h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+.card-back .price {
+    color: #e63946;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 8px 0;
+}
+.card-back .score {
+    color: #ff9f1c;
+    margin-bottom: 10px;
+}
+.card-back .desc {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* ========================
+   👇 新增：3D环形热门图书展示
+========================= */
+.circle-3d-box {
+    width: 100%;
+    text-align: center;
+    margin: 50px 0;
+}
+.circle-3d-box h3 {
+    margin-bottom: 30px;
+    color: #333;
+}
+.circle-3d {
+    width: 600px;
+    height: 300px;
+    margin: 0 auto;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: circleRotate 15s linear infinite; /* 👈 自动缓慢旋转 */
+}
+.circle-3d:hover {
+    animation-play-state: paused; /* 鼠标悬浮暂停 */
+}
+.circle-item {
+    position: absolute;
+    width: 180px;
+    height: 240px;
+    left: 50%;
+    top: 50%;
+    margin-left: -90px;
+    margin-top: -120px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    border-radius: 6px;
+    overflow: hidden;
+}
+.circle-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* 环形布局5个图书 */
+.circle-item:nth-child(1) { transform: rotateY(0deg) translateZ(280px); }
+.circle-item:nth-child(2) { transform: rotateY(72deg) translateZ(280px); }
+.circle-item:nth-child(3) { transform: rotateY(144deg) translateZ(280px); }
+.circle-item:nth-child(4) { transform: rotateY(216deg) translateZ(280px); }
+.circle-item:nth-child(5) { transform: rotateY(288deg) translateZ(280px); }
+
+@keyframes circleRotate {
+    0% { transform: rotateY(0deg); }
+    100% { transform: rotateY(360deg); }
+}
+
+.inp{
+    float: right;
+}
+
+/*3D*/
+#v3D{
+    perspective: 600px;
+}
+.photo5{
+    list-style: none;
+    margin: 10px auto;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 25s linear;
+}
+.photo5>li{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin:auto ;
+}
+.photo5>li:nth-child(1):hover{
+    transform: rotateY(180deg);
+}
