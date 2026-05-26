@@ -26,6 +26,85 @@ function hide(){
 findbook.addEventListener('input',function(){
     var selBook = document.getElementById("selbook");
     var inputVal = this.value;
+    var sel = document.getElementById("mysel");
+    var mysel = sel.value;
+    if(mysel == 'second' ){
+    if(inputVal == ''){
+        document.getElementById("selbook").style.display = "none";
+    }
+    if(inputVal == '夏'){
+        selBook.innerHTML = '';
+        selBook.innerHTML = '夏目漱石';
+        document.getElementById("selbook").style.display = "block";
+    }
+    if(inputVal == '夏目'){
+        selBook.innerHTML = '';
+        selBook.innerHTML = '夏目漱石';
+        document.getElementById("selbook").style.display = "block";
+    }
+    if(inputVal == '夏目漱'){
+        selBook.innerHTML = '';
+        selBook.innerHTML = '夏目漱石';
+        document.getElementById("selbook").style.display = "block";
+    }
+    if(inputVal == '夏目漱石'){
+        selBook.innerHTML = '';
+        selBook.innerHTML = '夏目漱石';
+        document.getElementById("selbook").style.display = "block";
+    }
+    if(inputVal == '东'){
+        selBook.innerHTML = '';
+        selBook.innerHTML = '东野圭吾';
+        document.getElementById("selbook").style.display = "block";
+    }
+    if(inputVal == '东野'){
+        selBook.innerHTML = '';
+        selBook.innerHTML = '东野圭吾';
+        document.getElementById("selbook").style.display = "block";
+    }
+    if(inputVal == '东野圭'){
+        selBook.innerHTML = '';
+        selBook.innerHTML = '东野圭吾';
+        document.getElementById("selbook").style.display = "block";
+    }
+    if(inputVal == '东野圭吾'){
+        selBook.innerHTML = '';
+        selBook.innerHTML = '东野圭吾';
+        document.getElementById("selbook").style.display = "block";
+    }
+    if(inputVal == '安'){
+        selBook.innerHTML = '';
+        selBook.innerHTML = '安德鲁・米勒';
+        document.getElementById("selbook").style.display = "block";
+    }
+    if(inputVal == '安德'){
+        selBook.innerHTML = '';
+        selBook.innerHTML = '安德鲁・米勒';
+        document.getElementById("selbook").style.display = "block";
+    }
+    if(inputVal == '安德鲁'){
+        selBook.innerHTML = '';
+        selBook.innerHTML = '从安德鲁・米勒';
+        document.getElementById("selbook").style.display = "block";
+    }
+    if(inputVal == '安德鲁・'){
+        selBook.innerHTML = '';
+        selBook.innerHTML = '安德鲁・米勒';
+        document.getElementById("selbook").style.display = "block";
+    }
+    if(inputVal == '安德鲁・米'){
+        selBook.innerHTML = '';
+        selBook.innerHTML = '安德鲁・米勒';
+        document.getElementById("selbook").style.display = "block";
+    }
+    if(inputVal == '安德鲁・米勒'){
+        selBook.innerHTML = '';
+        selBook.innerHTML = '安德鲁・米勒';
+        document.getElementById("selbook").style.display = "block";
+    }
+    }
+    
+    else if(mysel == 'first'){
     if(inputVal == ''){
         document.getElementById("selbook").style.display = "none";
     }
@@ -104,7 +183,39 @@ findbook.addEventListener('input',function(){
         selBook.innerHTML = '从月亮来的男孩';
         document.getElementById("selbook").style.display = "block";
     }
+    }
+
+    if(mysel == 'third'){
+    if(inputVal == '小'){
+        selBook.innerHTML = '';
+        selBook.innerHTML = '小说';
+        document.getElementById("selbook").style.display = "block";
+    }
+    if(inputVal == '小说'){
+        selBook.innerHTML = '';
+        selBook.innerHTML = '小说';
+        document.getElementById("selbook").style.display = "block";
+    }    
+    }
 });
+
+//构造函数创建对象
+function Book(name, author, price, score) {
+    this.bookName = name;   
+    this.author = author;   
+    this.price = price;     
+    this.score = score;     
+}
+const book1 = new Book("我是猫", "夏目漱石", 59, 9.5);
+const book2 = new Book("解忧杂货铺", "东野圭吾", 49, 9.6);
+const book3 = new Book("从月亮来的男孩", "安德鲁・米勒", 49, 9.2);
+//字面量创建对象
+const userInfo = {
+    username: "",       
+    password: "",       
+    isLogin: false,     // 登录状态
+    cart: []            // 购物车
+};
 
 // 密码强度实时显示
 pass.addEventListener("input", function () {
@@ -133,7 +244,11 @@ user.addEventListener("input", function () {
     var userr = document.getElementById("userr");
     var use = this.value;
     document.getElementById("userr").style.display = "block";
-    if( /^1[3-9]\d{9}$/.test(use) ||  /^\w+@\w+\.\w+$/.test(use) ){
+    if( use == ''){
+        userr.innerHTML = '';
+        document.getElementById("userr").style.display = "none";
+    }
+    else if( /^1[3-9]\d{9}$/.test(use) ||  /^\w+@\w+\.\w+$/.test(use) ){
         userr.innerHTML = '';
         document.getElementById("userr").style.display = "none";
     }
