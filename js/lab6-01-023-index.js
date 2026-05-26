@@ -107,7 +107,7 @@ findbook.addEventListener('input',function(){
 });
 
 // 密码强度实时显示
-passInput.addEventListener("input", function () {
+pass.addEventListener("input", function () {
     var passs = document.getElementById("passs");
     var pwd = this.value;
     passs.innerHTML = '弱';
