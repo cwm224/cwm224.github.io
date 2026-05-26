@@ -129,6 +129,19 @@ pass.addEventListener("input", function () {
 
 });
 
+user.addEventListener("input", function () {
+    var userr = document.getElementById("userr");
+    var use = this.value;
+    document.getElementById("userr").style.display = "block";
+    if(use == /^1[3-9]\d{9}$/ || use == /^\w+@\w+\.\w+$/){
+        document.getElementById("userr").style.display = "none";
+    }
+    else{
+        userr.innerHTML = '';
+        userr.innerHTML = '用户名必须是手机号或邮箱！';
+    }
+
+});
 // 注册：正则验证
 function reg() {
     var u = userInput.value;
