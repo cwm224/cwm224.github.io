@@ -110,15 +110,21 @@ findbook.addEventListener('input',function(){
 pass.addEventListener("input", function () {
     var passs = document.getElementById("passs");
     var pwd = this.value;
-    passs.innerHTML = '弱';
     document.getElementById("passs").style.display = "block";
-    if (pwd.length >= 6 && /[A-Z]/.test(pwd) && /[0-9]/.test(pwd)) {
+    if (pwd.length == 0){
+        document.getElementById("passs").style.display = "none";
+    }
+    else if (pwd.length < 6){
+        passs.innerHTML = '';
+        passs.innerHTML = '弱';
+    }
+    else if (pwd.length >= 6 && /[A-Z]/.test(pwd) && /[0-9]/.test(pwd)) {
         passs.innerHTML = '';
         passs.innerHTML = '强';
-        document.getElementById("passs").style.display = "block";
     } else if (pwd.length >= 6 || /[0-9]/.test(pwd)) {
         passs.innerHTML = '';
         passs.innerHTML = '中';
+        document.getElementById("passs").style.display = "block";
     }
 
 });
