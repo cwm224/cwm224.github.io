@@ -108,15 +108,18 @@ findbook.addEventListener('input',function(){
 
 // 密码强度实时显示
 passInput.addEventListener("input", function () {
+    var selBook = document.getElementById("userr");
     var pwd = this.value;
-    var level = "弱";
+    userr.innerHTML = '弱';
     var color = "red";
 
     if (pwd.length >= 6 && /[A-Z]/.test(pwd) && /[0-9]/.test(pwd)) {
-        level = "强";
+        userr.innerHTML = '';
+        userr.innerHTML = '强';
         color = "green";
     } else if (pwd.length >= 6 || /[0-9]/.test(pwd)) {
-        level = "中";
+        userr.innerHTML = '';
+        userr.innerHTML = '中';
         color = "orange";
     }
 
@@ -142,7 +145,7 @@ function reg() {
         return;
     }
 
-    // 正则：手机号 或 邮箱 ✅
+    // 正则：手机号 或 邮箱
     var phoneReg = /^1[3-9]\d{9}$/;
     var emailReg = /^\w+@\w+\.\w+$/;
 
