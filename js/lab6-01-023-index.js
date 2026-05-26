@@ -134,6 +134,7 @@ user.addEventListener("input", function () {
     var use = this.value;
     document.getElementById("userr").style.display = "block";
     if( /^1[3-9]\d{9}$/.test(use) ||  /^\w+@\w+\.\w+$/.test(use) ){
+        userr.innerHTML = '';
         document.getElementById("userr").style.display = "none";
     }
     else{
