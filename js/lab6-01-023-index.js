@@ -133,7 +133,7 @@ user.addEventListener("input", function () {
     var userr = document.getElementById("userr");
     var use = this.value;
     document.getElementById("userr").style.display = "block";
-    if(use == /^1[3-9]\d{9}$/ || use == /^\w+@\w+\.\w+$/){
+    if( /^1[3-9]\d{9}$/.test(use) ||  /^\w+@\w+\.\w+$/.test(use) ){
         document.getElementById("userr").style.display = "none";
     }
     else{
@@ -142,27 +142,3 @@ user.addEventListener("input", function () {
     }
 
 });
-// 注册：正则验证
-function reg() {
-    var u = userInput.value;
-    var p = passInput.value;
-
-    if (!u || !p) {
-        alert("请完整填写用户名和密码！");
-        return;
-    }
-
-    // 正则：手机号 或 邮箱
-    var phoneReg = /^1[3-9]\d{9}$/;
-    var emailReg = /^\w+@\w+\.\w+$/;
-
-    if (!phoneReg.test(u) && !emailReg.test(u)) {
-        alert("用户名必须是手机号或邮箱！");
-        return;
-    }
-
-    localStorage.setItem("username", u);
-    localStorage.setItem("password", p);
-
-    alert("注册成功！");
-}
