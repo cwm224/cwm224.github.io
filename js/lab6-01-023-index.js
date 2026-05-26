@@ -108,31 +108,19 @@ findbook.addEventListener('input',function(){
 
 // 密码强度实时显示
 passInput.addEventListener("input", function () {
-    var selBook = document.getElementById("userr");
+    var passs = document.getElementById("passs");
     var pwd = this.value;
-    userr.innerHTML = '弱';
-    var color = "red";
-
+    passs.innerHTML = '弱';
+    document.getElementById("passs").style.display = "block";
     if (pwd.length >= 6 && /[A-Z]/.test(pwd) && /[0-9]/.test(pwd)) {
-        userr.innerHTML = '';
-        userr.innerHTML = '强';
-        color = "green";
+        passs.innerHTML = '';
+        passs.innerHTML = '强';
+        document.getElementById("passs").style.display = "block";
     } else if (pwd.length >= 6 || /[0-9]/.test(pwd)) {
-        userr.innerHTML = '';
-        userr.innerHTML = '中';
-        color = "orange";
+        passs.innerHTML = '';
+        passs.innerHTML = '中';
     }
 
-    var tip = document.createElement("p");
-    tip.innerText = "密码强度：" + level;
-    tip.style.color = color;
-    tip.style.margin = "5px 0";
-    tip.id = "pwdLevel";
-
-    var old = document.getElementById("pwdLevel");
-    if (old) old.remove(); 
-
-    this.parentNode.appendChild(tip);
 });
 
 // 注册：正则验证
